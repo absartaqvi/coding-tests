@@ -15,14 +15,14 @@ Write an efficient algorithm for the following assumptions:
 N is an integer within the range [1..2,147,483,647].'''
 
 def solution(N):
-    binary_num = '{:b}'.format(N)
-    if binary_num.count('1') < 2 or '1' not in binary_num or '0' not in binary_num:
-        return 0
-    indices = [x for x,y in enumerate(binary_num ) if y == '1']
-    indices = indices[::-1]; gaps = []
-    for x in range(len(indices)-1):
-        gaps.append(indices[x] - indices[x+1] -1 )
-    return max(gaps)
+  binary_num = '{:b}'.format(N)
+  if binary_num.count('1') < 2 or '1' not in binary_num or '0' not in binary_num:
+      return 0
+  indices = [x for x,y in enumerate(binary_num ) if y == '1']
+  indices = indices[::-1]; gaps = []
+  for x in range(len(indices)-1):
+      gaps.append(indices[x] - indices[x+1] -1 )
+  return max(gaps)
 
 print '*'*50
 print solution(1073741825)
